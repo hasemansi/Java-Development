@@ -19,6 +19,7 @@ public class ArrayCopy {
         // source ──► [10, 20, 30, 40, 50]
         // copy     ──► [10, 20, 30, 40, 50]   (separate array, independent)
 
+        
         int[] copy = copyArray(source);
         copy[0] = 90;
 
@@ -38,8 +39,5 @@ public class ArrayCopy {
 
         System.out.println("Source Array : " + Arrays.toString(source)); // Source Array : [10, 87, 30, 40, 50]
         System.out.println("Reference Array :" + Arrays.toString(alias)); // Reference Array :[10, 87, 30, 40, 50]
-
-
-
     }
 }
