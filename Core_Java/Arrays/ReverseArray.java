@@ -1,29 +1,34 @@
 //Print the array in reverse order without creating a new array.
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class ReverseArray{
+
+    static void reversearraydemo(int[] arr){
+        int left = 0;
+        int right = arr.length-1;
+
+        while(left < right){
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+
+            left++;
+            right--;
+        } 
+    }
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+        int[] a = {52,3,1,45,32};
+        reversearraydemo(a);
+        System.out.println(Arrays.toString(a));
 
-        System.out.println("Enter size of array : ");
-        int n = sc.nextInt();
+        int[] b = {1,2,3,4,5,6};
+        reversearraydemo(b);
+        System.out.println(Arrays.toString(b));
 
-        if(n <= 0){
-            System.out.println("Size must be positive");
-            sc.close();
-            return;
-        }
+        int[] c = {9};
+        reversearraydemo(c);
+        System.out.println(Arrays.toString(c));
 
-        int[] marks = new int[n];
-        for(int i = 0; i < marks.length; i++){
-            System.out.println("Enter : " + (i + 1) + " number : ");
-            marks[i] = sc.nextInt();
-        }
-
-        System.out.println("Array in Reverse Order : ");
-        for(int j = marks.length - 1; j >= 0; j--){
-            System.out.print(marks[j] + " ");
-        }
-        sc.close();
     }
 }
